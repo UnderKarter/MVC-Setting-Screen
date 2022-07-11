@@ -15,6 +15,7 @@
 		C8388622287C906B00FCF4D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8388620287C906B00FCF4D9 /* LaunchScreen.storyboard */; };
 		C838862D287C92F600FCF4D9 /* StaticViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C838862C287C92F600FCF4D9 /* StaticViewCell.swift */; };
 		C838862F287C936000FCF4D9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C838862E287C936000FCF4D9 /* Models.swift */; };
+		C8388631287CB7FF00FCF4D9 /* SwitchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8388630287CB7FF00FCF4D9 /* SwitchViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C8388623287C906B00FCF4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C838862C287C92F600FCF4D9 /* StaticViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticViewCell.swift; sourceTree = "<group>"; };
 		C838862E287C936000FCF4D9 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		C8388630287CB7FF00FCF4D9 /* SwitchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwitchViewCell.swift; path = ../../../../../SwitchViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				C838862C287C92F600FCF4D9 /* StaticViewCell.swift */,
+				C8388630287CB7FF00FCF4D9 /* SwitchViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8388631287CB7FF00FCF4D9 /* SwitchViewCell.swift in Sources */,
 				C838861A287C906700FCF4D9 /* ViewController.swift in Sources */,
 				C8388616287C906700FCF4D9 /* AppDelegate.swift in Sources */,
 				C838862D287C92F600FCF4D9 /* StaticViewCell.swift in Sources */,
