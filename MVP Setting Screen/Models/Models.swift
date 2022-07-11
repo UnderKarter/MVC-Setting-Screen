@@ -34,6 +34,15 @@ struct BoolOption {
     let label: String
 }
 
+struct NotificationOption {
+    let title: String
+    let icon: UIImage?
+    let iconBackgroundColor: UIColor
+    let handler: (()->Void)
+    let number: Int
+    let backgroundNotificaton: UIColor
+}
+
 struct Section {
     let opitions: [SettingOptionType]
 }
@@ -42,11 +51,8 @@ enum SettingOptionType {
     case staticCell (model: StaticOption)
     case switchCell (model: SwitchOption)
     case boolCell (model: BoolOption)
+    case notificationCell (model: NotificationOption)
 }
 
-var models = [Section]()
-
-struct Metrics {
-    
-}
+let notificationNumber = 2
 
