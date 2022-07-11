@@ -15,7 +15,11 @@ struct StaticOption {
     let handler: (()->Void)
 }
 
-var models = [StaticOption]()
+struct Section {
+    let opitions: [StaticOption]
+}
+
+var models = [Section]()
 
 struct Metrics {
     

@@ -34,20 +34,68 @@ class ViewController: UIViewController {
     }
     
     func configure() {
-        models = Array(0...10).compactMap({
-                StaticOption(title: "Line \($0)",
-                             icon: UIImage(systemName: "bell"),
-                             iconBackgroundColor: UIColor.systemRed){
-                }
-            })
-        }
-    
+        models.append(Section(opitions: [
+            StaticOption(title: "Авиарежим",
+                         icon: UIImage(systemName: "airplane"),
+                         iconBackgroundColor: UIColor.systemOrange){
+                             print("Нажата ячейка Авиарежим")
+                         },
+            StaticOption(title: "Wi-Fi",
+                         icon: UIImage(systemName: "wifi"),
+                         iconBackgroundColor: UIColor.systemBlue){
+                             print("Нажата ячейка Wi-Fi")
+                         },
+            StaticOption(title: "Bluetooth",
+                         icon: UIImage(systemName: "airplane"),
+                         iconBackgroundColor: UIColor.systemBlue){
+                             print("Нажата ячейка Bluetooth")
+                         },
+            StaticOption(title: "Сотовая связь",
+                         icon: UIImage(systemName: "airplane"),
+                         iconBackgroundColor: UIColor.systemGreen){
+                             print("Нажата ячейка Сотовая связь")
+                         },
+            StaticOption(title: "Режим модема",
+                         icon: UIImage(systemName: "personalhotspot"),
+                         iconBackgroundColor: UIColor.systemGreen){
+                             print("Нажата ячейка Режим модема")
+                         },
+            StaticOption(title: "VPN",
+                         icon: UIImage(systemName: "airplane"),
+                         iconBackgroundColor: UIColor.systemBlue){
+                             print("Нажата ячейка VPN")
+                         }
+        ]))
+        
+        models.append(Section(opitions: [
+            StaticOption(title: "Уведомления",
+                         icon: UIImage(systemName: "airplane"),
+                         iconBackgroundColor: UIColor.systemOrange){
+                             print("Нажата ячейка Уведомления")
+                         },
+            StaticOption(title: "Звуки, тактильные сигналы",
+                         icon: UIImage(systemName: "wifi"),
+                         iconBackgroundColor: UIColor.systemRed){
+                             print("Нажата ячейка Звуки, тактильные сигналы")
+                         },
+            StaticOption(title: "Фокусирование",
+                         icon: UIImage(systemName: "airplane"),
+                         iconBackgroundColor: UIColor.systemPurple){
+                             print("Нажата ячейка Фокусирование")
+                         },
+            StaticOption(title: "Экранное время",
+                         icon: UIImage(systemName: "airplane"),
+                         iconBackgroundColor: UIColor.systemPurple){
+                             print("Нажата ячейка Экранное время")
+                         }
+        ]))
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = models[indexPath.row]
+        let model = models[indexPath.section].opitions[indexPath.row]
         
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: StaticViewCell.identifier,
@@ -55,11 +103,21 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
             }
         cell.configure(with: model)
-        
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.count
+        return models[section].opitions.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let model = models[indexPath.section].opitions[indexPath.row]
+        model.handler()
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+            return models.count
+        }
 }
