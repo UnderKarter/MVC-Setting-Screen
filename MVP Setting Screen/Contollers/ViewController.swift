@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
     
     func configure() {
-        Data.models = Array(0...10).compactMap({
+        models = Array(0...10).compactMap({
                 StaticOption(title: "Line \($0)",
                              icon: UIImage(systemName: "bell"),
                              iconBackgroundColor: UIColor.systemRed){
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = Data.models[indexPath.row]
+        let model = models[indexPath.row]
         
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: StaticViewCell.identifier,
@@ -60,6 +60,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Data.models.count
+        return models.count
     }
 }
