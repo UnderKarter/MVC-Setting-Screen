@@ -23,6 +23,17 @@ struct SwitchOption {
     var isOn: Bool
 }
 
+struct BoolOption {
+    let title: String
+    let icon: UIImage?
+    let iconBackgroundColor: UIColor
+    let handler: (()->Void)
+    // Режим подключения
+    var isOn: Bool
+    // Состояние подключения
+    let label: String
+}
+
 struct Section {
     let opitions: [SettingOptionType]
 }
@@ -30,6 +41,7 @@ struct Section {
 enum SettingOptionType {
     case staticCell (model: StaticOption)
     case switchCell (model: SwitchOption)
+    case boolCell (model: BoolOption)
 }
 
 var models = [Section]()
