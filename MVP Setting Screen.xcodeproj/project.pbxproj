@@ -56,15 +56,39 @@
 		C8388614287C906700FCF4D9 /* MVP Setting Screen */ = {
 			isa = PBXGroup;
 			children = (
-				C8388615287C906700FCF4D9 /* AppDelegate.swift */,
 				C8388617287C906700FCF4D9 /* SceneDelegate.swift */,
-				C8388619287C906700FCF4D9 /* ViewController.swift */,
+				C8388615287C906700FCF4D9 /* AppDelegate.swift */,
+				C8388629287C907700FCF4D9 /* Models */,
+				C838862A287C908500FCF4D9 /* Views */,
+				C838862B287C909300FCF4D9 /* Contollers */,
 				C838861B287C906700FCF4D9 /* Main.storyboard */,
 				C838861E287C906B00FCF4D9 /* Assets.xcassets */,
 				C8388620287C906B00FCF4D9 /* LaunchScreen.storyboard */,
 				C8388623287C906B00FCF4D9 /* Info.plist */,
 			);
 			path = "MVP Setting Screen";
+			sourceTree = "<group>";
+		};
+		C8388629287C907700FCF4D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C838862A287C908500FCF4D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C838862B287C909300FCF4D9 /* Contollers */ = {
+			isa = PBXGroup;
+			children = (
+				C8388619287C906700FCF4D9 /* ViewController.swift */,
+			);
+			path = Contollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
