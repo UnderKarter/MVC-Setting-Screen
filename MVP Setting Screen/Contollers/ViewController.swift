@@ -154,7 +154,7 @@ class ViewController: UIViewController {
             .staticCell(model: StaticOption(
                 title: "Экранное время",
                 icon: UIImage(systemName: "hourglass"),
-                iconBackgroundColor: UIColor.systemPurple){
+                iconBackgroundColor: UIColor.systemBlue){
                     print("Нажата ячейка Экранное время")
                 })
         ]))
