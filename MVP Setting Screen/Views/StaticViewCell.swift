@@ -13,14 +13,14 @@ class StaticViewCell: UITableViewCell {
     
     private let label: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 1
+        label.numberOfLines = Metrics.labelNumberOfLines
         return label
     }()
     
     private let iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
-        view.layer.cornerRadius = 8
+        view.layer.cornerRadius = Metrics.iconContainerCornerRadius
         view.layer.masksToBounds = true
         return view
     }()
@@ -50,26 +50,26 @@ class StaticViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let size: CGFloat = contentView.frame.size.height - 12
+        let size: CGFloat = contentView.frame.size.height - Metrics.sizeHeight
         iconContainer.frame = CGRect(
-            x: 15,
-            y: 8,
+            x: Metrics.iconContainerFrameX,
+            y: Metrics.iconContainerFrameY,
             width: size,
             height: size
         )
         
         let imageSize: CGFloat = size
         iconImageView.frame = CGRect(
-            x: (size-imageSize)/2,
-            y: (size-imageSize)/2,
+            x: (size-imageSize) / Metrics.iconImageViewFrameX,
+            y: (size-imageSize) / Metrics.iconImageViewFrameX,
             width: imageSize,
             height: imageSize
         )
         
         label.frame = CGRect(
-            x: 25 + iconContainer.frame.size.width,
-            y: 0,
-            width: contentView.frame.size.width - 15 - iconContainer.frame.size.width,
+            x: Metrics.labelFrameX + iconContainer.frame.size.width,
+            y: Metrics.labelFrameY,
+            width: contentView.frame.size.width - Metrics.labelFrameWidth - iconContainer.frame.size.width,
             height: contentView.frame.size.height
         )
     }
@@ -85,5 +85,22 @@ class StaticViewCell: UITableViewCell {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
+    }
+    
+    private struct Metrics {
+        
+        static let labelNumberOfLines = 1
+        
+        static let labelFrameX: CGFloat = 25
+        static let labelFrameY: CGFloat = 0
+        static let labelFrameWidth: CGFloat = 15
+        
+        static let iconImageViewFrameX: CGFloat = 2
+        
+        static let sizeHeight: CGFloat = 12
+        
+        static let iconContainerCornerRadius: CGFloat = 8
+        static let iconContainerFrameX: CGFloat = 15
+        static let iconContainerFrameY: CGFloat = 8
     }
 }

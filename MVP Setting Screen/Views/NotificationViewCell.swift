@@ -13,14 +13,14 @@ class NotificationViewCell: UITableViewCell {
 
     private let label: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 1
+        label.numberOfLines = Metrics.labelNumberOfLines
         return label
     }()
 
     private let iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
-        view.layer.cornerRadius = 8
+        view.layer.cornerRadius = Metrics.containerCornerRadius
         view.layer.masksToBounds = true
         return view
     }()
@@ -34,16 +34,16 @@ class NotificationViewCell: UITableViewCell {
 
     private let number: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 1
+        label.numberOfLines = Metrics.notificNumberOfLines
         label.textColor = .white
-        label.font = .boldSystemFont(ofSize: 18)
+        label.font = .boldSystemFont(ofSize: Metrics.notificFontSize)
         return label
     }()
 
     private let backgroundNotification: UIView = {
         let view = UIView()
         view.clipsToBounds = true
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = Metrics.notificBackgroundCornerRadius
         view.layer.masksToBounds = true
         return view
     }()
@@ -68,11 +68,11 @@ class NotificationViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        let size: CGFloat = contentView.frame.size.height - 12
+        let size: CGFloat = contentView.frame.size.height - Metrics.sizeHeight
 
         iconContainer.frame = CGRect(
-            x: 15,
-            y: 8,
+            x: Metrics.iconContainerFrameX,
+            y: Metrics.iconContainerFrameY,
             width: size,
             height: size
         )
@@ -80,29 +80,29 @@ class NotificationViewCell: UITableViewCell {
         let imageSize: CGFloat = size
 
         iconImageView.frame = CGRect(
-            x: (size-imageSize)/2,
-            y: (size-imageSize)/2,
+            x: (size-imageSize) / Metrics.iconImageViewFrameX,
+            y: (size-imageSize) / Metrics.iconImageViewFrameX,
             width: imageSize,
             height: imageSize
         )
 
         label.frame = CGRect(
-            x: 25 + iconContainer.frame.size.width,
-            y: 0,
-            width: contentView.frame.size.width - 15 - iconContainer.frame.size.width,
+            x: Metrics.labelFrameX + iconContainer.frame.size.width,
+            y: Metrics.labelFrameY,
+            width: contentView.frame.size.width - Metrics.labelFrameWidth - iconContainer.frame.size.width,
             height: contentView.frame.size.height
         )
 
         backgroundNotification.frame = CGRect(
-            x: contentView.frame.width - 45,
-            y: 7,
+            x: contentView.frame.width - Metrics.notificBackgroundFrameX,
+            y: Metrics.notificBackgroundFrameY,
             width: size,
             height: size
         )
 
         number.frame = CGRect(
-            x: contentView.frame.width - 35,
-            y: 7,
+            x: contentView.frame.width - Metrics.numberFrameX,
+            y: Metrics.numberFrameY,
             width: size,
             height: size
         )
@@ -123,5 +123,33 @@ class NotificationViewCell: UITableViewCell {
         iconContainer.backgroundColor = model.iconBackgroundColor
         number.text = String(model.number)
         backgroundNotification.backgroundColor = model.backgroundNotificaton
+    }
+    
+    private struct Metrics {
+        
+        static let labelNumberOfLines = 1
+        
+        static let containerCornerRadius: CGFloat = 8
+        
+        static let notificNumberOfLines = 1
+        static let notificFontSize: CGFloat = 18
+        static let notificBackgroundCornerRadius: CGFloat = 15
+        static let notificBackgroundFrameX: CGFloat = 45
+        static let notificBackgroundFrameY: CGFloat = 7
+        
+        static let sizeHeight: CGFloat = 12
+        
+        static let labelFrameX: CGFloat = 25
+        static let labelFrameY: CGFloat = 0
+        static let labelFrameWidth: CGFloat = 15
+        
+        static let iconImageViewFrameX: CGFloat = 2
+        static let iconImageViewFrameY: CGFloat = 2
+        
+        static let iconContainerFrameX: CGFloat = 15
+        static let iconContainerFrameY: CGFloat = 8
+        
+        static let numberFrameX: CGFloat = 35
+        static let numberFrameY: CGFloat = 7
     }
 }
