@@ -8,15 +8,15 @@
 import UIKit
 
 class NotificationViewCell: UITableViewCell {
-
+    
     static let identifier = "NotificationViewCell"
-
+    
     private let label: UILabel = {
         let label = UILabel()
         label.numberOfLines = Metrics.labelNumberOfLines
         return label
     }()
-
+    
     private let iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -24,14 +24,14 @@ class NotificationViewCell: UITableViewCell {
         view.layer.masksToBounds = true
         return view
     }()
-
+    
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.tintColor = .white
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
+    
     private let number: UILabel = {
         let label = UILabel()
         label.numberOfLines = Metrics.notificNumberOfLines
@@ -39,7 +39,7 @@ class NotificationViewCell: UITableViewCell {
         label.font = .boldSystemFont(ofSize: Metrics.notificFontSize)
         return label
     }()
-
+    
     private let backgroundNotification: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -47,10 +47,10 @@ class NotificationViewCell: UITableViewCell {
         view.layer.masksToBounds = true
         return view
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        
         contentView.addSubview(label)
         contentView.addSubview(iconContainer)
         iconContainer.addSubview(iconImageView)
@@ -58,48 +58,48 @@ class NotificationViewCell: UITableViewCell {
         contentView.addSubview(number)
         contentView.clipsToBounds = true
         accessoryType = .disclosureIndicator
-
+        
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError()
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
         let size: CGFloat = contentView.frame.size.height - Metrics.sizeHeight
-
+        
         iconContainer.frame = CGRect(
             x: Metrics.iconContainerFrameX,
             y: Metrics.iconContainerFrameY,
             width: size,
             height: size
         )
-
+        
         let imageSize: CGFloat = size
-
+        
         iconImageView.frame = CGRect(
             x: (size-imageSize) / Metrics.iconImageViewFrameX,
             y: (size-imageSize) / Metrics.iconImageViewFrameX,
             width: imageSize,
             height: imageSize
         )
-
+        
         label.frame = CGRect(
             x: Metrics.labelFrameX + iconContainer.frame.size.width,
             y: Metrics.labelFrameY,
             width: contentView.frame.size.width - Metrics.labelFrameWidth - iconContainer.frame.size.width,
             height: contentView.frame.size.height
         )
-
+        
         backgroundNotification.frame = CGRect(
             x: contentView.frame.width - Metrics.notificBackgroundFrameX,
             y: Metrics.notificBackgroundFrameY,
             width: size,
             height: size
         )
-
+        
         number.frame = CGRect(
             x: contentView.frame.width - Metrics.numberFrameX,
             y: Metrics.numberFrameY,
@@ -107,7 +107,7 @@ class NotificationViewCell: UITableViewCell {
             height: size
         )
     }
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         iconImageView.image = nil
@@ -116,7 +116,7 @@ class NotificationViewCell: UITableViewCell {
         number.text = nil
         backgroundNotification.backgroundColor = nil
     }
-
+    
     public func configure(with model: NotificationOption) {
         label.text = model.title
         iconImageView.image = model.icon
