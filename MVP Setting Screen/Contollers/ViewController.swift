@@ -81,42 +81,42 @@ class ViewController: UIViewController {
                 },
                 isOn: false
             )),
-               
-            .boolCell(model: BoolOption(
-                title: "Wi-Fi",
-                icon: UIImage(systemName: "wifi"),
-                iconBackgroundColor: UIColor.systemBlue,
-                handler: {
-                print("Нажата ячейка Wi-Fi")
-                },
-                isOn: false,
-                label: "Не подкл."
-            )),
-               
-            .boolCell(model: BoolOption(
-                title: "Bluetooth",
-                icon: UIImage(systemName: "arrow.left.to.line.compact"),
-                iconBackgroundColor: UIColor.systemBlue,
-                handler: {
-                    print("Нажата ячейка Bluetooth")
-                },
-                isOn: false,
-                label: "Выключен"
-            )),
-               
-            .staticCell(model: StaticOption(
-                title: "Сотовая связь",
-                icon: UIImage(systemName: "antenna.radiowaves.left.and.right"),
-                iconBackgroundColor: UIColor.systemGreen){
-                    print("Нажата ячейка Сотовая связь")
-                }),
-        
-            .staticCell(model: StaticOption(
-                title: "Режим модема",
-                icon: UIImage(systemName: "personalhotspot"),
-                iconBackgroundColor: UIColor.systemGreen){
-                    print("Нажата ячейка Режим модема")
-                }),
+            
+                .boolCell(model: BoolOption(
+                    title: "Wi-Fi",
+                    icon: UIImage(systemName: "wifi"),
+                    iconBackgroundColor: UIColor.systemBlue,
+                    handler: {
+                        print("Нажата ячейка Wi-Fi")
+                    },
+                    isOn: false,
+                    label: "Не подкл."
+                )),
+            
+                .boolCell(model: BoolOption(
+                    title: "Bluetooth",
+                    icon: UIImage(systemName: "arrow.left.to.line.compact"),
+                    iconBackgroundColor: UIColor.systemBlue,
+                    handler: {
+                        print("Нажата ячейка Bluetooth")
+                    },
+                    isOn: false,
+                    label: "Выключен"
+                )),
+            
+                .staticCell(model: StaticOption(
+                    title: "Сотовая связь",
+                    icon: UIImage(systemName: "antenna.radiowaves.left.and.right"),
+                    iconBackgroundColor: UIColor.systemGreen){
+                        print("Нажата ячейка Сотовая связь")
+                    }),
+            
+                .staticCell(model: StaticOption(
+                    title: "Режим модема",
+                    icon: UIImage(systemName: "personalhotspot"),
+                    iconBackgroundColor: UIColor.systemGreen){
+                        print("Нажата ячейка Режим модема")
+                    }),
             .switchCell(model: SwitchOption(
                 title: "VPN",
                 icon: UIImage(systemName: "network.badge.shield.half.filled"),
@@ -127,8 +127,8 @@ class ViewController: UIViewController {
                 isOn: false
             ))
         ]))
-
-           //MARK: - Section #2
+        
+        //MARK: - Section #2
         models.append(Section(opitions: [
             .staticCell(model: StaticOption(
                 title: "Уведомления",
@@ -137,26 +137,26 @@ class ViewController: UIViewController {
                     print("Нажата ячейка Уведомления")
                 }),
             
-            .staticCell(model: StaticOption(
-                title: "Звуки, тактильные сигналы",
-                icon: UIImage(systemName: "person.wave.2"),
-                iconBackgroundColor: UIColor.systemRed){
-                    print("Нажата ячейка Звуки, тактильные сигналы")
-                }),
+                .staticCell(model: StaticOption(
+                    title: "Звуки, тактильные сигналы",
+                    icon: UIImage(systemName: "person.wave.2"),
+                    iconBackgroundColor: UIColor.systemRed){
+                        print("Нажата ячейка Звуки, тактильные сигналы")
+                    }),
             
-            .staticCell(model: StaticOption(
-                title: "Фокусирование",
-                icon: UIImage(systemName: "moon.fill"),
-                iconBackgroundColor: UIColor.systemPurple){
-                    print("Нажата ячейка Фокусирование")
-                }),
-               
-            .staticCell(model: StaticOption(
-                title: "Экранное время",
-                icon: UIImage(systemName: "hourglass"),
-                iconBackgroundColor: UIColor.systemBlue){
-                    print("Нажата ячейка Экранное время")
-                })
+                .staticCell(model: StaticOption(
+                    title: "Фокусирование",
+                    icon: UIImage(systemName: "moon.fill"),
+                    iconBackgroundColor: UIColor.systemPurple){
+                        print("Нажата ячейка Фокусирование")
+                    }),
+            
+                .staticCell(model: StaticOption(
+                    title: "Экранное время",
+                    icon: UIImage(systemName: "hourglass"),
+                    iconBackgroundColor: UIColor.systemBlue){
+                        print("Нажата ячейка Экранное время")
+                    })
         ]))
         
         //MARK: - Section #3
@@ -171,83 +171,83 @@ class ViewController: UIViewController {
                 number: notificationNumber,
                 backgroundNotificaton: UIColor.systemRed
             )),
+    
+                .staticCell(model: StaticOption(
+                    title: "Пунк управления",
+                    icon: UIImage(systemName: "switch.2"),
+                    iconBackgroundColor: UIColor.systemGray){
+                        print("Нажата ячейка Пунк управления")
+                    }),
             
-            .staticCell(model: StaticOption(
-                title: "Пунк управления",
-                icon: UIImage(systemName: "switch.2"),
-                iconBackgroundColor: UIColor.systemGray){
-                    print("Нажата ячейка Пунк управления")
-                }),
+                .staticCell(model: StaticOption(
+                    title: "Экран и яркость",
+                    icon: UIImage(systemName: "textformat.size"),
+                    iconBackgroundColor: UIColor.blue){
+                        print("Нажата ячейка Экран и яркость")
+                    }),
             
-            .staticCell(model: StaticOption(
-                title: "Экран и яркость",
-                icon: UIImage(systemName: "textformat.size"),
-                iconBackgroundColor: UIColor.blue){
-                    print("Нажата ячейка Экран и яркость")
-                }),
+                .staticCell(model: StaticOption(
+                    title: "Экран Домой",
+                    icon: UIImage(systemName: "calendar"),
+                    iconBackgroundColor: UIColor.blue){
+                        print("Нажата ячейка Экран Домой")
+                    }),
             
-            .staticCell(model: StaticOption(
-                title: "Экран Домой",
-                icon: UIImage(systemName: "calendar"),
-                iconBackgroundColor: UIColor.blue){
-                    print("Нажата ячейка Экран Домой")
-                }),
+                .staticCell(model: StaticOption(
+                    title: "Универсальный доступ",
+                    icon: UIImage(systemName: "person.crop.square.filled.and.at.rectangle.fill"),
+                    iconBackgroundColor: UIColor.systemBlue){
+                        print("Нажата ячейка Универсальный доступ")
+                    }),
             
-            .staticCell(model: StaticOption(
-                title: "Универсальный доступ",
-                icon: UIImage(systemName: "person.crop.square.filled.and.at.rectangle.fill"),
-                iconBackgroundColor: UIColor.systemBlue){
-                    print("Нажата ячейка Универсальный доступ")
-                }),
-        
-            .staticCell(model: StaticOption(
-                title: "Обои",
-                icon: UIImage(systemName: "cloud"),
-                iconBackgroundColor: UIColor.systemCyan){
-                    print("Нажата ячейка Обои")
-                }),
+                .staticCell(model: StaticOption(
+                    title: "Обои",
+                    icon: UIImage(systemName: "cloud"),
+                    iconBackgroundColor: UIColor.systemCyan){
+                        print("Нажата ячейка Обои")
+                    }),
             
-            .staticCell(model: StaticOption(
-                title: "Siri и Поиск",
-                icon: UIImage(systemName: "s.circle"),
-                iconBackgroundColor: UIColor.systemPurple){
-                    print("Нажата ячейка Siri и Поиск")
-                }),
-        
-            .staticCell(model: StaticOption(
-                title: "Face ID и код-пароль",
-                icon: UIImage(systemName: "faceid"),
-                iconBackgroundColor: UIColor.systemGreen){
-                    print("Нажата ячейка Face ID и код-пароль")
-                }),
-        
-            .staticCell(model: StaticOption(
-                title: "Экстренный вызов - SOS",
-                icon: UIImage(systemName: "umbrella"),
-                iconBackgroundColor: UIColor.systemRed){
-                    print("Нажата ячейка Экстренный вызов - SOS")
-                }),
-        
-            .staticCell(model: StaticOption(
-                title: "Уведомление о контакте",
-                icon: UIImage(systemName: "circle.hexagongrid.fill"),
-                iconBackgroundColor: UIColor.systemRed){
-                    print("Нажата ячейка Уведомление о контакте")
-                }),
+                .staticCell(model: StaticOption(
+                    title: "Siri и Поиск",
+                    icon: UIImage(systemName: "s.circle"),
+                    iconBackgroundColor: UIColor.systemPurple){
+                        print("Нажата ячейка Siri и Поиск")
+                    }),
             
-            .staticCell(model: StaticOption(
-                title: "Аккумулятор",
-                icon: UIImage(systemName: "battery.75"),
-                iconBackgroundColor: UIColor.systemGreen){
-                    print("Нажата ячейка Аккумулятор")
-                }),
-        
-            .staticCell(model: StaticOption(
-                title: "Конфиденциальность",
-                icon: UIImage(systemName: "hand.raised.fill"),
-                iconBackgroundColor: UIColor.blue){
-                    print("Нажата ячейка Конфидециальность")
-                })
+                .staticCell(model: StaticOption(
+                    title: "Face ID и код-пароль",
+                    icon: UIImage(systemName: "faceid"),
+                    iconBackgroundColor: UIColor.systemGreen){
+                        print("Нажата ячейка Face ID и код-пароль")
+                    }),
+            
+                .staticCell(model: StaticOption(
+                    title: "Экстренный вызов - SOS",
+                    icon: UIImage(systemName: "umbrella"),
+                    iconBackgroundColor: UIColor.systemRed){
+                        print("Нажата ячейка Экстренный вызов - SOS")
+                    }),
+            
+                .staticCell(model: StaticOption(
+                    title: "Уведомление о контакте",
+                    icon: UIImage(systemName: "circle.hexagongrid.fill"),
+                    iconBackgroundColor: UIColor.systemRed){
+                        print("Нажата ячейка Уведомление о контакте")
+                    }),
+            
+                .staticCell(model: StaticOption(
+                    title: "Аккумулятор",
+                    icon: UIImage(systemName: "battery.75"),
+                    iconBackgroundColor: UIColor.systemGreen){
+                        print("Нажата ячейка Аккумулятор")
+                    }),
+            
+                .staticCell(model: StaticOption(
+                    title: "Конфиденциальность",
+                    icon: UIImage(systemName: "hand.raised.fill"),
+                    iconBackgroundColor: UIColor.blue){
+                        print("Нажата ячейка Конфидециальность")
+                    })
         ]))
     }
 }
